@@ -30,17 +30,18 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
 }
 
 const InfiniteImages = () => {
+  // Hold state
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
 
+  // Fetch images on component mount
   useEffect(() => {
     fetchImages()
   }, [])
 
-  const endpoint = "<Endpoint placeholder>"
-
+  // Fetch Images from functions
   const fetchImages = () => {
-    axios(endpoint).then(res => {
+    axios("/.netlify/functions/fetch").then(res => {
       setImages([...images, ...res.data.images])
       setLoading(false)
     })
