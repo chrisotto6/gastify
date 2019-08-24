@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios"
 import PropTypes from "prop-types"
+import axios from "axios"
 import InfiniteScroll from "react-infinite-scroll-component"
 import "./gallery.css"
 
 const ImageGallery = ({ images, loading, fetchImages }) => {
+  // Create gallery here
   return (
     <InfiniteScroll
       dataLength={images.length}
@@ -12,7 +13,7 @@ const ImageGallery = ({ images, loading, fetchImages }) => {
       hasMore={true}
       loader={
         <p style={{ textAlign: "center", marginTop: "1%" }}>
-          More doggos incoming...
+          More doggo incoming 🐕 🐕...
         </p>
       }
     >

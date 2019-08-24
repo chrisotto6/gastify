@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
@@ -13,7 +14,7 @@ const Header = ({ siteTitle }) => (
           }}
           className="has-text-white is-size-3"
         >
-          {siteTitle}
+          {siteTitle} 🐶
         </Link>
       </div>
       <div className="navbar-end" style={{ marginRight: "3em" }}>
@@ -41,5 +42,13 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 )
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
 
 export default Header
